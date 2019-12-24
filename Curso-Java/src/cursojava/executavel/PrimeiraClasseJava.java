@@ -9,7 +9,7 @@ public class PrimeiraClasseJava {
 	// main é o metodo principal de uma class executavel em java
 	public static void main(String[] args) {
 		
-		
+		Aluno aluno1 = new Aluno(); 
 		
 		String nome = JOptionPane.showInputDialog("Qual o nome do aluno? ");
 		String idade = JOptionPane.showInputDialog("Qual a idade? ");
@@ -27,9 +27,13 @@ public class PrimeiraClasseJava {
 		String nota3 = JOptionPane.showInputDialog("Nota 3");
 		String nota4 = JOptionPane.showInputDialog("Nota 4");
 		
+		String disciplina1 =  JOptionPane.showInputDialog("Disciplina 1");
+		String disciplina2 =  JOptionPane.showInputDialog("Disciplina 2");
+		String disciplina3 =  JOptionPane.showInputDialog("Disciplina 3");
+		String disciplina4 =  JOptionPane.showInputDialog("Disciplina 4");
 		
 
-		Aluno aluno1 = new Aluno(); /* aqui será o joão */
+		
 		
 		aluno1.setNome(nome); 
 		aluno1.setIdade(Integer.valueOf(idade));
@@ -41,27 +45,24 @@ public class PrimeiraClasseJava {
 		aluno1.setDataMatriculado(matricula);
 		aluno1.setNomeEscola(nomeEscola);
 		aluno1.setSerieMatriculado(serie);
-		aluno1.setNota1(Double.parseDouble(nota1));
-		aluno1.setNota2(Double.parseDouble(nota2));
-		aluno1.setNota3(Double.parseDouble(nota3));
-		aluno1.setNota4(Double.parseDouble(nota4));
 		
-		System.out.println("Nome é = " + aluno1.getNome());
-		System.out.println("Idade é = " + aluno1.getIdade());
-		System.out.println("Data de nascimento é = " + aluno1.getDataNascimento());
-		System.out.println("RG é = " + aluno1.getRegistroGeral());
-		System.out.println("Numero CPF é = " + aluno1.getNumeroCPF());
-		System.out.println("Nome da Mãe é = " + aluno1.getNomeMae());
-		System.out.println("Nome do Pai é = " + aluno1.getNomePai());
-		System.out.println("Data de matricula é = " + aluno1.getDataMatriculado());
-		System.out.println("Nome da Escola é = " + aluno1.getNomeEscola());
-		System.out.println("Série matriculado é = " + aluno1.getSerieMatriculado());
-		System.out.println("MEdia da Nota é = " + aluno1.getMediaNota());
-		System.out.println("Resultado = " + (aluno1.getAlunoAprovado() ? "Aprovado" : "Reprovado" ));
+		aluno1.getDisciplina().setNota1(Double.parseDouble(nota1));
+		aluno1.getDisciplina().setNota2(Double.parseDouble(nota2));
+		aluno1.getDisciplina().setNota3(Double.parseDouble(nota3));
+		aluno1.getDisciplina().setNota4(Double.parseDouble(nota4));
+		
+		aluno1.getDisciplina().setDisciplina1(disciplina1);
+		aluno1.getDisciplina().setDisciplina2(disciplina2);
+		aluno1.getDisciplina().setDisciplina3(disciplina3);
+		aluno1.getDisciplina().setDisciplina4(disciplina4);
 		
 		
+	
+		System.out.println(aluno1.toString());
+		System.out.println("Media do aluno = " + aluno1.getMediaNota());
+		System.out.println("Resultado = " + aluno1.getAlunoAprovado2());
 		
-
+       
 		
 	}
 
