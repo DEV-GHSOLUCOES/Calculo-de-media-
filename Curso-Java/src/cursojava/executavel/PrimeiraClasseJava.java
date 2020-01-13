@@ -15,6 +15,12 @@ public class PrimeiraClasseJava {
 
 	// main é o metodo principal de uma class executavel em java
 	public static void main(String[] args) {
+		
+		String login = JOptionPane.showInputDialog("Informe o Login");
+		String senha = JOptionPane.showInputDialog("Informe o Senha");
+		
+		if(login.equalsIgnoreCase("admin") && 
+				senha.equalsIgnoreCase("admin")) {
 
 		List<Aluno> alunos = new ArrayList<Aluno>();
 		
@@ -117,5 +123,7 @@ public class PrimeiraClasseJava {
 
 			System.out.println("Resultado = " + aluno.getAlunoAprovado2() + " com media de = " + aluno.getMediaNota());
 		}
+	}
+		
 	}
 }
