@@ -5,6 +5,8 @@ import java.util.List;
 
 import cusrsojava.constantes.StatusAluno;
 
+
+/*Classe filha de Pessoa*/
 public class Aluno extends Pessoa {
 
 	

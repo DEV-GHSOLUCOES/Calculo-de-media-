@@ -1,5 +1,9 @@
 package cursojava.classes;
 
+
+
+
+/*Classe Pai*/
 public class Pessoa {
 
 	protected String nome;
