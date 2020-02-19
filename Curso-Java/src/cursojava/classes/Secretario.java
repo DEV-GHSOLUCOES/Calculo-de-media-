@@ -1,12 +1,15 @@
 package cursojava.classes;
 
+import cursojava.interfaces.PermitirAcesso;
 
 /*Classe filha de Pessoa*/
-public class Secretario extends Pessoa {
+public class Secretario extends Pessoa implements PermitirAcesso {
 
 	private String experiencia;
 	private String nivelCargo;
 	private String registro;
+	
+	
 
 	public String getExperiencia() {
 		return experiencia;
@@ -37,6 +40,21 @@ public class Secretario extends Pessoa {
 		return "Secretario [experiencia=" + experiencia + ", nivelCargo=" + nivelCargo + ", registro=" + registro
 				+ ", nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento + ", registroGeral="
 				+ registroGeral + ", numeroCPF=" + numeroCPF + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai + "]";
+	}
+   
+	@Override
+	public double salario() {
+		
+		return 1800.80 *0.9;
+	}
+
+	
+	/*Esse é o metodo do contrato de autenticação*/
+	
+	@Override
+	public boolean autenticar(String login, String senha) {
+		
+		return login.equals("admin") && senha.equals("admin");
 	}
 	
 	

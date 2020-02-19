@@ -4,7 +4,7 @@ package cursojava.classes;
 
 
 /*Classe Pai*/
-public class Pessoa {
+public  abstract  class Pessoa {
 
 	protected String nome;
 	protected int idade;
@@ -13,6 +13,12 @@ public class Pessoa {
 	protected String numeroCPF;
 	protected String nomeMae;
 	protected String nomePai;
+	
+	
+	/*Método abstrato é  o que fica na classe pai  e é obrigatorio para classes filhas*/
+	public abstract double salario();
+	
+	
 
 	public String getNome() {
 		return nome;
@@ -68,6 +74,12 @@ public class Pessoa {
 
 	public void setNomePai(String nomePai) {
 		this.nomePai = nomePai;
+	}
+	
+	/*Retorna true caso seja 18 anos pra cima senão false*/
+	public boolean pessoaMaiorIdade() {
+		
+		return idade >= 18;
 	}
 
 }

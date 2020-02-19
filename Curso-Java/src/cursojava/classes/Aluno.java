@@ -193,7 +193,21 @@ public class Aluno extends Pessoa {
 		} else {
 			return StatusAluno.REPROVADO; 
 		}
-	}	
+	}
+	
+	/*Identifica método sobreescrito*/
+	@Override
+	public boolean pessoaMaiorIdade() {
+		
+		return super.pessoaMaiorIdade();
+	}
+	
+	
+	@Override
+	public double salario() {
+		
+		return 1500.90;
+	}
 	
 
 }
