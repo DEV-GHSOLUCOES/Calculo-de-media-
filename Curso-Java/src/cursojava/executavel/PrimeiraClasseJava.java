@@ -10,6 +10,7 @@ import javax.swing.JOptionPane;
 import cursojava.classes.Aluno;
 import cursojava.classes.Disciplina;
 import cursojava.classes.Secretario;
+import cursojava.classesauxiliares.FuncaoAutenticacao;
 import cursojava.interfaces.PermitirAcesso;
 import cusrsojava.constantes.StatusAluno;
 
@@ -17,21 +18,22 @@ public class PrimeiraClasseJava {
 
 	// main é o metodo principal de uma class executavel em java
 	public static void main(String[] args) {
+		
+		
+		try {
 
 		String login = JOptionPane.showInputDialog("Informe o Login");
 		String senha = JOptionPane.showInputDialog("Informe o Senha");
 
-		
-		
 
 		// Se for true acessa senão nao acessa
-		if (new Secretario().autenticar(login, senha)) {
+		if (new FuncaoAutenticacao(new Secretario(login, senha)).autenticar()) { 
 
 			List<Aluno> alunos = new ArrayList<Aluno>();
 
 			HashMap<String, List<Aluno>> maps = new HashMap<String, List<Aluno>>();
 
-			for (int qtd = 1; qtd <= 5; qtd++) {
+			for (int qtd = 1; qtd <= 1; qtd++) {  
 
 				String nome = JOptionPane.showInputDialog("Qual o nome do aluno " + qtd + " ?");
 				/*
@@ -133,6 +135,14 @@ public class PrimeiraClasseJava {
 
 		} else {
 			JOptionPane.showMessageDialog(null, "Acesso não permitido");
+		}
+		
+		}catch (Exception e) {
+			
+			//Imprimi o erro no console
+			e.printStackTrace(); 
+			
+			JOptionPane.showMessageDialog(null,  "Erro ao processar notas");
 		}
 
 	}
